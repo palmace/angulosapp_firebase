@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.palmace.angulosapp"
+        namespace 'com.palmace.angulosapp'
         minSdk 21
         targetSdk 31
         versionCode 1
