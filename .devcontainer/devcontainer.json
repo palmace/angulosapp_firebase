@@ -1,0 +1,26 @@
+{
+  "name": "Android Kotlin Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "Gradle.vscode-gradle",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "ms-vscode.hexeditor",
+        "Google.bazel",
+        "redhat.java"
+      ]
+    }
+  },
+  //"postCreateCommand": "export ANDROID_HOME=/usr/local/android-sdk && sudo mkdir -p $ANDROID_HOME && sudo chown codespace:codespace $ANDROID_HOME && yes | wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O /tmp/cmdline-tools.zip && unzip /tmp/cmdline-tools.zip -d $ANDROID_HOME/cmdline-tools/ && mv $ANDROID_HOME/cmdline-tools/cmdline-tools $ANDROID_HOME/cmdline-tools/latest && rm /tmp/cmdline-tools.zip && yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install 'platforms;android-34' 'build-tools;34.0.0' 'cmdline-tools;latest' 'emulator' && yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses && echo 'export ANDROID_HOME=$ANDROID_HOME' >> ~/.bashrc && echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools' >> ~/.bashrc",
+  "remoteUser": "codespace",
+  "containerEnv": {
+    "ANDROID_SDK_ROOT": "/usr/local/android-sdk"
+  }
+}

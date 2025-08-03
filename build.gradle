@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Versiones compatibles entre sí
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.google.gms:google-services:4.3.15'
+        // ¡Versión actualizada del plugin de Kotlin para compatibilidad!
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23" 
+    }
+}
+
+plugins {
+    id 'com.android.application' version '8.1.1' apply false
+    id 'com.android.library' version '8.1.1' apply false // Actualizado para coincidir con la aplicación
+    // ¡Versión actualizada del plugin de Kotlin para compatibilidad!
+    id 'org.jetbrains.kotlin.android' version '1.9.23' apply false
+    
+    // Firebase y Google Services
+    id 'com.google.gms.google-services' version '4.3.15' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,17 @@
+pluginManagement { // ESTE BLOQUE ES CRUCIAL PARA LA RESOLUCIÓN DE PLUGINS
+    repositories {
+        google() // Repositorio de Google para plugins (como Android Gradle Plugin)
+        mavenCentral() // Repositorio central de Maven
+        gradlePluginPortal() // Repositorio predeterminado para plugins de Gradle
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google() // Imprescindible para las dependencias de librerías de Google
+        mavenCentral() // Repositorio central de Maven para dependencias de librerías
+    }
+}
+rootProject.name = "AprendizajeDeAngulos_V13-Funcional98porciento" // Asegúrate que este nombre coincide EXACTAMENTE con el nombre de tu carpeta de proyecto
+include ':app' // Incluye tu módulo de aplicación
