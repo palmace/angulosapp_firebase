@@ -1,37 +1,23 @@
-plugins {
-    id 'com.android.application'
-    id 'com.google.gms.google-services'
-}
-
-
-android {
-    compileSdk 31
-
-    defaultConfig {
-        namespace 'com.palmace.angulosapp'
-        minSdk 21
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
-
 dependencies {
-	// NOTE: CodeAssist does NOT support adding dependencies here,
-	// use the library manager instead
-implementation 'com.google.firebase:firebase-bom:32.7.0'
-implementation 'com.google.firebase:firebase-database-ktx'
+    // Declara el Firebase BoM correctamente para que gestione las versiones
+    implementation platform('com.google.firebase:firebase-bom:32.7.0') // <-- ¡Aquí está la clave!
 
+    // Firebase SDKs para productos que quieras usar
+    // Cuando usas la BoM, NO incluyas versiones para las librerías individuales de Firebase
+    implementation 'com.google.firebase:firebase-database-ktx'
+
+    // Si estás usando Kotlin, asegúrate de tener la librería estándar de Kotlin
+    // Si ya la tienes en otro lado o no usas Kotlin, puedes omitirla
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+
+    // Aquí irían otras dependencias que ya tengas o necesites
+    // Por ejemplo, para AndroidX:
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    // Otras dependencias para testing, si las usas:
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
-
