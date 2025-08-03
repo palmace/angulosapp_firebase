@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "700325626881",
+    "project_id": "compalmaceangulosapp",
+    "storage_bucket": "compalmaceangulosapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700325626881:android:26e2a548c60e4225ef6c00",
+        "android_client_info": {
+          "package_name": "com.palmace.angulosapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700325626881-ejemplo_client_id_para_sha1.apps.googleusercontent.com", // Puedes usar un ID de cliente de ejemplo o si lo tienes de la consola
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.palmace.angulosapp",
+            "certificate_hash": "A3:BE:AC:53:B5:DD:49:88:62:68:6A:69:3E:F9:3A:DE:1B:3F:7A:17" // <-- ¡TU SHA-1 AQUÍ!
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNVG4Jw7wyRt4-WMw46XVk20PtGiu4AZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

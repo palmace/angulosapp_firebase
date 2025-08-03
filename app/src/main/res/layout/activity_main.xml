@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp"
+tools:context=".MainActivity">
+
+<!-- Textos existentes (se mantienen igual) -->
+<TextView
+android:id="@+id/textoObjetivo"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:textSize="18sp"
+android:text="Objetivo: 0°"/>
+
+<!-- ... otros TextViews existentes ... -->
+
+<!-- Vista del ángulo -->
+<com.palmace.angulosapp.VistaAngulo
+android:id="@+id/vistaAngulo"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_weight="1"/>
+
+<!-- Feedback -->
+<TextView
+android:id="@+id/textoFeedback"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:textSize="18sp"
+android:text="@string/feedback_inicial"
+android:textAlignment="center"
+android:textColor="#FF0000"/>
+
+<!-- Nuevos botones de votación -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginTop="8dp">
+
+<Button
+android:id="@+id/btnLike"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="👍 Me gusta"
+android:layout_marginEnd="4dp"
+android:backgroundTint="#4CAF50"/>
+
+<Button
+android:id="@+id/btnDislike"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="👎 No me gusta"
+android:layout_marginStart="4dp"
+android:backgroundTint="#F44336"/>
+</LinearLayout>
+
+<!-- Estadísticas existentes -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginTop="8dp">
+
+<TextView
+android:id="@+id/textoPuntuacion"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Puntuación: 0"/>
+
+<!-- ... otros TextViews de estadísticas ... -->
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+<string name="app_name">Aprendizaje de Ángulos</string>
+<string name="feedback_inicial">Gira el dial para alcanzar el ángulo objetivo</string>
+<string name="feedback_exacto">¡Perfecto! Ángulo exacto</string>
+<string name="feedback_desviacion">Cerca, desviación de %d°</string>
+<string name="feedback_gran_desviacion">Sigue intentando, desviación de %d°</string>
+</resources>
