@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.palmace.angulosapp' // Tu namespace correcto
-    compileSdk 31 // Tu versión de compilación
+    compileSdk 34 // Tu versión de compilación
     
     defaultConfig {
         applicationId "com.palmace.angulosapp"
         minSdk 21
-        targetSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
