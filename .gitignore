@@ -32,3 +32,4 @@ google-services.json
 
 # Android Profiling
 *.hprof
+install_android_sdk.sh
