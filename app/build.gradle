@@ -1,18 +1,24 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android' // ¡Asegúrate de que este plugin esté para proyectos Kotlin!
     id 'com.google.gms.google-services'
 }
 
-
 android {
-    compileSdk 31
-
+    namespace 'com.palmace.angulosapp' // Tu namespace correcto
+    compileSdk 34 // Tu versión de compilación
+    
     defaultConfig {
         applicationId "com.palmace.angulosapp"
         minSdk 21
-        targetSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -25,13 +31,35 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions { // Necesario para proyectos Kotlin
+        jvmTarget = '1.8' // O '17' si usas JDK 17, pero 1.8 es más común para compatibilidad
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
 }
 
 dependencies {
-	// NOTE: CodeAssist does NOT support adding dependencies here,
-	// use the library manager instead
-implementation 'com.google.firebase:firebase-bom:32.7.0'
-implementation 'com.google.firebase:firebase-database-ktx'
+    // Declara el Firebase BoM correctamente para que gestione las versiones
+    implementation platform('com.google.firebase:firebase-bom:32.7.0')
 
+    // Firebase SDKs para productos que quieras usar
+    // Cuando usas la BoM, NO incluyas versiones para las librerías individuales de Firebase
+    implementation 'com.google.firebase:firebase-database-ktx'
+
+    // Kotlin KTX
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8' // Para soporte Kotlin estándar
+
+    // AndroidX UI y Layout
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Pruebas (si las usas)
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
-
